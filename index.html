@@ -8,24 +8,24 @@
 <body>
     
     <script src='targetGameScript.js'> </script>
-    <a-scene background="color: #001122" vr-mode-ui="enabled: true">
+    <a-scene background="color: #262626" vr-mode-ui="enabled: true">
         <!-- Assets -->
         <a-assets>
             <a-mixin id="ring" 
                      geometry="primitive: torus; radius: 1; radiusTubular: 0.1" 
-                     material="color: #00ff88; metalness: 0.5">
+                     material="color: #1BDEAF; metalness: 0.5">
             </a-mixin>
         </a-assets>
 
         <!-- Camera with cursor for gaze -->
         <a-camera>
             <a-cursor 
-                cursor="fuse: true; fuseTimeout: 1500"
+                cursor="fuse: true; fuseTimeout: 1000"
                 position="0 0 -1"
                 geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
                 material="color: white; shader: flat"
                 animation__click="property: scale; startEvents: click; from: 0.1 0.1 0.1; to: 1 1 1; dur: 150"
-                animation__fusing="property: scale; startEvents: fusing; from: 1 1 1; to: 0.1 0.1 0.1; dur: 1500"
+                animation__fusing="property: scale; startEvents: fusing; from: 1 1 1; to: 0.1 0.1 0.1; dur: 1000"
                 animation__mouseleave="property: scale; startEvents: mouseleave; to: 1 1 1; dur: 500">
             </a-cursor>
         </a-camera>
@@ -64,7 +64,7 @@
         <a-entity id="difficultyMenu" position="0 0 -3">
             <a-text value="Select Difficulty Level:" 
                     position="0 2 0" 
-                    color="white" 
+                    color="teal" 
                     scale="1.5 1.5 1.5" 
                     align="center">
             </a-text>
@@ -72,7 +72,7 @@
             <a-box id="easyButton" 
                    position="-2 0.5 0" 
                    width="1.5" height="0.5" depth="0.1"
-                   color="#00ff00" 
+                   color="#2CE652" 
                    cursor-listener
                    difficulty-selector="level: easy">
                 <a-text value="EASY" position="0 0 0.06" color="black" align="center" scale="0.8 0.8 0.8"></a-text>
@@ -81,7 +81,7 @@
             <a-box id="mediumButton" 
                    position="0 0.5 0" 
                    width="1.5" height="0.5" depth="0.1"
-                   color="#ffaa00" 
+                   color="#7BAFD4" 
                    cursor-listener
                    difficulty-selector="level: medium">
                 <a-text value="MEDIUM" position="0 0 0.06" color="black" align="center" scale="0.8 0.8 0.8"></a-text>
@@ -90,25 +90,25 @@
             <a-box id="hardButton" 
                    position="2 0.5 0" 
                    width="1.5" height="0.5" depth="0.1"
-                   color="#ff0000" 
+                   color="#AB2020" 
                    cursor-listener
                    difficulty-selector="level: hard">
                 <a-text value="HARD" position="0 0 0.06" color="white" align="center" scale="0.8 0.8 0.8"></a-text>
             </a-box>
 
-            <a-text value="Easy: Slow rings, 10 pts, 60s" 
+            <a-text value="Easy: Slow rings, 5pts, 60s" 
                     position="0 -0.5 0" 
                     color="lightgreen" 
                     scale="0.8 0.8 0.8" 
                     align="center">
             </a-text>
-            <a-text value="Medium: Medium rings, 15 pts, 45s" 
+            <a-text value="Medium: Medium rings, 10pts, 45s" 
                     position="0 -1 0" 
                     color="orange" 
                     scale="0.8 0.8 0.8" 
                     align="center">
             </a-text>
-            <a-text value="Hard: Fast rings, 25 pts, 30s" 
+            <a-text value="Hard: Fast rings, 25pts, 20s" 
                     position="0 -1.5 0" 
                     color="lightcoral" 
                     scale="0.8 0.8 0.8" 
