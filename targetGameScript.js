@@ -1,4 +1,4 @@
-    // Game variables
+    // Game variables?
         let score = 0;
         let gameContainer;
         let scoreText, difficultyText, timeText, gameOverText;
