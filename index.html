@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Ring Collector VR Game</title>
+    <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
+</head>
+<body>
+	<script src='targetGameScript.js'></script>
+	
+    <a-scene background="color: #001122" vr-mode-ui="enabled: true">
+        <!-- Assets -->
+        <a-assets>
+            <a-mixin id="ring" 
+                     geometry="primitive: torus; radius: 1; radiusTubular: 0.1" 
+                     material="color: #00ff88; metalness: 0.5"
+                     animation="property: rotation; to: 0 360 0; loop: true; dur: 3000">
+            </a-mixin>
+        </a-assets>
+
+        <!-- Camera with cursor for gaze -->
+        <a-camera>
+            <a-cursor 
+                cursor="fuse: true; fuseTimeout: 1500"
+                position="0 0 -1"
+                geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
+                material="color: white; shader: flat"
+                animation__click="property: scale; startEvents: click; from: 0.1 0.1 0.1; to: 1 1 1; dur: 150"
+                animation__fusing="property: scale; startEvents: fusing; from: 1 1 1; to: 0.1 0.1 0.1; dur: 1500"
+                animation__mouseleave="property: scale; startEvents: mouseleave; to: 1 1 1; dur: 500">
+            </a-cursor>
+        </a-camera>
+
+        <!-- UI Text for Score -->
+        <a-text id="scoreText" 
+                value="Score: 0" 
+                position="-2 3 -4" 
+                color="white" 
+                scale="2 2 2">
+        </a-text>
+
+        <!-- Game container -->
+        <a-entity id="gameContainer"></a-entity>
+
+        <!-- Ground plane -->
+        <a-plane position="0 -2 0" 
+                 rotation="-90 0 0" 
+                 width="20" 
+                 height="20" 
+                 color="#112244">
+        </a-plane>
+
+        <!-- Lighting -->
+        <a-light type="ambient" color="#404040"></a-light>
+        <a-light type="point" position="0 5 0" color="#ffffff"></a-light>
+    </a-scene>
+
+    
+</body>
+</html>
