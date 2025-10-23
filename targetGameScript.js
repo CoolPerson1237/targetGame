@@ -14,7 +14,7 @@
                 name: "Easy",
                 ringSpeed: 5000,      // Slow rotation (5 seconds)
                 spawnRate: 3000,      // New ring every 3 seconds
-                points: 10,           // 10 points per ring
+                points: 5,           // 5 points per ring
                 roundTime: 60,        // 60 seconds total
                 ringLifetime: 8000    // Rings last 8 seconds
             },
@@ -22,7 +22,7 @@
                 name: "Medium",
                 ringSpeed: 2500,      // Medium rotation (2.5 seconds)
                 spawnRate: 2000,      // New ring every 2 seconds
-                points: 15,           // 15 points per ring
+                points: 10,           // 10 points per ring
                 roundTime: 45,        // 45 seconds total
                 ringLifetime: 6000    // Rings last 6 seconds
             },
@@ -31,7 +31,7 @@
                 ringSpeed: 1000,      // Fast rotation (1 second)
                 spawnRate: 1500,      // New ring every 1.5 seconds
                 points: 25,           // 25 points per ring
-                roundTime: 30,        // 30 seconds total
+                roundTime: 20,        // 20 seconds total
                 ringLifetime: 4000    // Rings last 4 seconds
             }
         };
@@ -108,7 +108,7 @@
             rings = [];
             
             // Show game over message
-            gameOverText.setAttribute('value', `Game Over! Final Score: ${score}`);
+            gameOverText.setAttribute('value', `Good try but, game over! Final Score: ${score}`);
             gameOverText.setAttribute('visible', 'true');
             
             // Show difficulty menu again after 3 seconds
